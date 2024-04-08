@@ -1,0 +1,47 @@
+$colorSelectSite: #f16d7f;
+$widthSite: 1600px;
+$colorText: #222222;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+* {
+    text-decoration: none;
+    font-family: Lato;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    border: 1px solid #000;
+    padding-left: 227px;
+    padding-right: 231px;
+    padding-bottom: 24px;
+    padding-top: 25px;
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        // align-content: center;
+    }
+}
+
+.breadcrumbs__link {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $colorText;
+}
