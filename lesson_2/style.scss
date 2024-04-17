@@ -147,12 +147,14 @@
 .last:hover .mega-box {
     right: 0;
     left: auto;
+
 }
 
 .last:hover .mega-box::before {
     right: 50px;
     left: auto;
 }
+
 
 .mega-box {
     display: none;
@@ -211,6 +213,37 @@
         margin-right: 0;
     }
 }
+
+.img__sale::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("img/sale_menu.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 255px;
+    height: 118px;
+    top: auto;
+    bottom: 20px;
+    right: 21px;
+}
+
+.img__sale::before {
+    content: "Super sale!";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: $colorBackText;
+    top: auto;
+    bottom: 30px;
+    right: 31px;
+}
+
 
 
 
