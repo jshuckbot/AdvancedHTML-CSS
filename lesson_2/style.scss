@@ -19,10 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 227px;
-    padding-right: 231px;
-    padding-bottom: 24px;
-    padding-top: 25px;
+    padding: 25px 231px 24px 224px;
 
     &__left {
         display: flex;
@@ -35,11 +32,30 @@
         align-items: center;
         gap: 13px;
     }
+
+    &__right {
+        display: flex;
+        gap: 26px;
+
+        &__button {
+            width: 130px;
+            height: 41px;
+            background-color: $colorSelectSite;
+
+            &_text {
+                font-size: 15px;
+                line-height: 38px;
+                color: $colorBackText;
+                letter-spacing: 0.025em;
+            }
+        }
+    }
+
+
 }
 
 .title__logo {
     font-size: 27px;
-    line-height: 32px;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.025em;
@@ -54,22 +70,30 @@
 .header__search {
     display: flex;
     align-items: center;
-}
 
-.button__browse {
-    width: 87px;
-    height: 40px;
-    background-color: #cdcdcc;
-    background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
-    border: 1px solid $colorBorber;
-    border-radius: 3px 0px 0px 3px;
+    &__button__browse {
+        width: 87px;
+        height: 38px;
+        background-color: #cdcdcc;
+        background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
+        border: 1px solid $colorBorber;
+        border-radius: 3px 0px 0px 3px;
 
-    &__style__text {
-        font-size: 14px;
-        line-height: 32px;
-        font-weight: 300;
-        letter-spacing: 0.025em;
-        color: $colorText;
+        &_text {
+            font-size: 14px;
+            line-height: 32px;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+            color: $colorText;
+        }
+    }
+
+    &__button__magnifier {
+        width: 38px;
+        height: 38px;
+        background-color: $colorBackText;
+        border: 1px solid $colorBorber;
+        border-radius: 0px 3px 3px 0px;
     }
 }
 
@@ -82,33 +106,12 @@
     padding-left: 16px;
 }
 
-.button__search {
-    width: 40px;
-    height: 40px;
-    background-color: $colorBackText;
-    border: 1px solid $colorBorber;
-    border-radius: 0px 3px 3px 0px;
-}
 
-.header__basket {
-    display: flex;
-    gap: 26px;
-}
-
-.button__account {
-    width: 130px;
-    height: 41px;
-    background-color: $colorSelectSite;
+.button {
+    display: block;
+    text-align: center;
     align-content: center;
     text-align: center;
-
-    &__style {
-        font-size: 15px;
-        line-height: 38px;
-
-        letter-spacing: 0.025em;
-        color: $colorBackText;
-    }
 }
 
 
@@ -155,13 +158,24 @@
     left: auto;
 }
 
+.pointer:hover .mega-box {
+    right: auto;
+    left: auto;
+    top: 37px;
+}
+
+.pointer:hover .mega-box::before {
+    right: auto;
+    left: 67px;
+}
 
 .mega-box {
     display: none;
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #e8e8e8;
-    padding: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     position: absolute;
     z-index: 1;
     top: 32px;
@@ -208,6 +222,7 @@
 
 .mega-item {
     margin-right: 46px;
+    margin-top: 20px;
 
     &:last-of-type {
         margin-right: 0;
@@ -243,10 +258,6 @@
     bottom: 30px;
     right: 31px;
 }
-
-
-
-
 
 .top {
     max-width: $widthSite;
@@ -390,6 +401,7 @@ main {
     }
 
     &__all {
+
         margin-top: 150px;
         display: flex;
         justify-content: center;
@@ -403,16 +415,16 @@ main {
         align-content: center;
         text-align: center;
 
-        &__style__text {
+        &_text {
             font-size: $fontSizeRegular;
             line-height: 44px;
             font-weight: 700;
             letter-spacing: 0.025em;
             color: $colorBackText;
         }
+
     }
 }
-
 
 .offers {
     margin-top: 113px;
@@ -553,6 +565,7 @@ main {
 }
 
 .subscribe__input {
+    display: inline;
     width: 334px;
     height: 46px;
     font-size: 14px;
@@ -575,8 +588,11 @@ main {
         border-bottom-right-radius: 20px;
         border: none;
         letter-spacing: 0.025em;
-        line-height: 10px;
     }
+}
+
+.form_box {
+    display: flex;
 }
 
 .footer__information {
