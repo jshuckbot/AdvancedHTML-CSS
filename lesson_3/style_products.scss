@@ -1,0 +1,166 @@
+@import 'vars';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+* {
+    text-decoration: none;
+    font-family: Lato;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+@import 'header';
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f3f4;
+    padding: 65px 230px 65px;
+
+    &__title {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #f16d7f;
+    }
+
+    &__right {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #636363;
+
+        &:hover {
+            color: $colorSelectSite;
+        }
+    }
+}
+
+.left__menu {
+    display: flex;
+    flex-direction: column;
+    width: 243px;
+    position: absolute;
+    left: 75px;
+}
+
+.menu__direction {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+
+}
+
+
+.category {
+    display: flex;
+    align-items: center;
+    // height: 60px;
+    // margin-bottom: 18px;
+
+    &__item {
+
+        list-style: none;
+        margin-left: 16px;
+        font-size: 14px;
+        // line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        // color: $colorSelectSite;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: #ef5b70;
+        top: -9px;
+        height: 37px;
+        width: 5px;
+    }
+}
+
+
+@import 'products';
+
+.content__top {
+    padding-top: 71px;
+    padding-bottom: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+
+    &__title {
+        font-size: 14px;
+        // line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $productText;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__style {
+        font-size: 14px;
+        line-height: 26px;
+        font-weight: 400;
+        color: $productText;
+    }
+
+    &__pipe {
+        color: #dfdfdf;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+    }
+
+    &__checkbox {
+        display: flex;
+        gap: 23px;
+    }
+
+    &__label {
+        // padding-left: 9px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $productText;
+        // float: left;
+    }
+
+}
+
+.three {
+    grid-template-columns: repeat(3, 263px);
+}
+
+
+@import 'footer';
