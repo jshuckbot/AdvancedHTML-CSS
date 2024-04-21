@@ -316,6 +316,9 @@ main {
 
 .content {
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content__title {
@@ -336,10 +339,10 @@ main {
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(4, 261px);
-  grid-gap: 32px;
-  justify-content: center;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  width: 1141px;
 }
 .products__link {
   height: 364px;
@@ -411,6 +414,83 @@ main {
   color: #ffffff;
 }
 
+@supports (display: grid) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 261px);
+    grid-gap: 32px;
+    justify-content: center;
+  }
+  .products__link {
+    height: 364px;
+  }
+  .products__items {
+    height: 364px;
+    position: relative;
+  }
+  .products__items:hover {
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);
+  }
+  .products__items:hover .item_pic {
+    filter: brightness(30%);
+  }
+  .products__items:hover .products__add {
+    display: flex;
+  }
+  .products__box {
+    padding-top: 19px;
+    padding-bottom: 23px;
+    padding-left: 15px;
+  }
+  .products__add {
+    top: 98px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    pointer-events: none;
+  }
+  .products__add-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .products__title {
+    font-weight: 700;
+    margin-bottom: 17px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #222222;
+  }
+  .products__price {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f16d7f;
+  }
+  .products__all {
+    margin-top: 79px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .products__button {
+    width: 212px;
+    height: 48px;
+    background-color: #f16d7f;
+    align-content: center;
+    text-align: center;
+  }
+  .products__button_text {
+    font-size: 16px;
+    line-height: 44px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    color: #ffffff;
+  }
+}
 .add {
   display: flex;
   padding: 10px;

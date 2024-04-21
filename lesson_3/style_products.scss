@@ -50,68 +50,80 @@
 }
 
 .left__menu {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     width: 243px;
     position: absolute;
     left: 75px;
 }
 
-.menu__direction {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-
-
-}
 
 
 .category {
     display: flex;
     align-items: center;
-    // height: 60px;
-    // margin-bottom: 18px;
+
 
     &__item {
-
         list-style: none;
-        margin-left: 16px;
-        font-size: 14px;
-        // line-height: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        // color: $colorSelectSite;
+
+
+
+        &::after {
+            margin-top: 8px;
+            display: block;
+            content: "";
+            border: 1px solid #ebebeb;
+        }
     }
 
     &::before {
+        display: block;
         content: "";
         position: absolute;
-        background-color: #ef5b70;
+        background-color: $colorSelectSite;
         top: -9px;
         height: 37px;
         width: 5px;
+
+    }
+
+    &__title {
+        margin-left: 16px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+
+
+    &[open] .category__title {
+        color: $colorSelectSite;
     }
 }
 
 
 @import 'products';
 
+
+
 .content__top {
     padding-top: 71px;
-    padding-bottom: 48px;
     position: relative;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filter {
     display: flex;
-    justify-content: center;
-    gap: 180px;
+    justify-content: space-between;
+    width: 852px;
+
 
     &__title {
         font-size: 14px;
-        // line-height: 20px;
+
         font-weight: 700;
         text-transform: uppercase;
         color: $productText;
@@ -121,17 +133,20 @@
         display: flex;
         flex-direction: column;
         gap: 25px;
+        width: 236px;
+
     }
 
     &__style {
         font-size: 14px;
-        line-height: 26px;
         font-weight: 400;
         color: $productText;
     }
 
     &__pipe {
         color: #dfdfdf;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     &__content {
@@ -139,28 +154,107 @@
         flex-direction: column;
         gap: 13px;
 
+        &_direction {
+            gap: 0px;
+            flex-direction: row;
+        }
+
     }
 
     &__checkbox {
         display: flex;
-        gap: 23px;
+        flex-direction: column;
+        gap: 19px;
+
+        &_direction {
+            gap: 17px;
+        }
     }
 
     &__label {
-        // padding-left: 9px;
         font-size: 14px;
-        line-height: 20px;
         font-weight: 400;
         text-transform: uppercase;
         color: $productText;
-        // float: left;
+        margin-right: 23px;
     }
 
 }
 
-.three {
-    grid-template-columns: repeat(3, 263px);
+@supports not (display: grid) {
+    .content {
+        width: 1640px;
+    }
 }
 
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products {
+    // width: 853px;
+}
+
+@supports(display: grid) {
+    .three {
+        grid-template-columns: repeat(3, 263px);
+    }
+}
+
+input[type=checkbox] {
+    margin-top: 2px;
+    margin-right: 9px;
+}
+
+.range {
+    appearance: none;
+    height: 6px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    outline: none;
+    overflow: hidden;
+    width: 236px;
+}
+
+.range::-webkit-slider-thumb {
+    background: $colorSelectSite;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    box-shadow: -200px 0 0 185px $colorSelectSite;
+    border: 0;
+}
+
+.range::-moz-range-thumb {
+    background: $colorSelectSite;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    box-shadow: -200px 0 0 185px $colorSelectSite;
+    border: 0;
+}
+
+.products__sort {
+    margin-top: 49px;
+    margin-bottom: 49px;
+    width: 852px;
+    height: 50px;
+    background-color: #f3f3f3;
+}
+
+.select-name {
+    width: 86px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+
+}
 
 @import 'footer';
