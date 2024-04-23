@@ -1,0 +1,260 @@
+@import 'vars';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+* {
+    text-decoration: none;
+    font-family: Lato;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+@import 'header';
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f3f4;
+    padding: 65px 230px 65px;
+
+    &__title {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #f16d7f;
+    }
+
+    &__right {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #636363;
+
+        &:hover {
+            color: $colorSelectSite;
+        }
+    }
+}
+
+.left__menu {
+    // display: flex;
+    // flex-direction: column;
+    width: 243px;
+    position: absolute;
+    left: 75px;
+}
+
+
+
+.category {
+    display: flex;
+    align-items: center;
+
+
+    &__item {
+        list-style: none;
+
+
+
+        &::after {
+            margin-top: 8px;
+            display: block;
+            content: "";
+            border: 1px solid #ebebeb;
+        }
+    }
+
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        background-color: $colorSelectSite;
+        top: -9px;
+        height: 37px;
+        width: 5px;
+
+    }
+
+    &__title {
+        margin-left: 16px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+
+
+    &[open] .category__title {
+        color: $colorSelectSite;
+    }
+}
+
+
+@import 'products';
+
+
+
+.content__top {
+    padding-top: 71px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: 852px;
+
+
+    &__title {
+        font-size: 14px;
+
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $productText;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 236px;
+
+    }
+
+    &__style {
+        font-size: 14px;
+        font-weight: 400;
+        color: $productText;
+    }
+
+    &__pipe {
+        color: #dfdfdf;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+
+        &_direction {
+            gap: 0px;
+            flex-direction: row;
+        }
+
+    }
+
+    &__checkbox {
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+
+        &_direction {
+            gap: 17px;
+        }
+    }
+
+    &__label {
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $productText;
+        margin-right: 23px;
+    }
+
+}
+
+@supports not (display: grid) {
+    .content {
+        width: 1640px;
+    }
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products {
+    // width: 853px;
+}
+
+@supports(display: grid) {
+    .three {
+        grid-template-columns: repeat(3, 263px);
+    }
+}
+
+input[type=checkbox] {
+    margin-top: 2px;
+    margin-right: 9px;
+}
+
+.range {
+    appearance: none;
+    height: 6px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    outline: none;
+    overflow: hidden;
+    width: 236px;
+}
+
+.range::-webkit-slider-thumb {
+    background: $colorSelectSite;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    box-shadow: -200px 0 0 185px $colorSelectSite;
+    border: 0;
+}
+
+.range::-moz-range-thumb {
+    background: $colorSelectSite;
+    appearance: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    box-shadow: -200px 0 0 185px $colorSelectSite;
+    border: 0;
+}
+
+.products__sort {
+    margin-top: 49px;
+    margin-bottom: 49px;
+    width: 852px;
+    height: 50px;
+    background-color: #f3f3f3;
+}
+
+.select-name {
+    width: 86px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+
+}
+
+@import 'footer';
