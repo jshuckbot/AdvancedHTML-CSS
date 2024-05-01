@@ -1,0 +1,206 @@
+.products {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    width: 1141px;
+
+    &__link {
+        height: 364px;
+    }
+
+    &__items {
+        height: 364px;
+        position: relative;
+
+        &:hover {
+            box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        &:hover .item_pic {
+            filter: brightness(30%);
+        }
+
+        &:hover .products__add {
+            display: flex;
+        }
+    }
+
+    &__box {
+
+        padding-top: 19px;
+        padding-bottom: 23px;
+        padding-left: 15px;
+
+    }
+
+    &__add {
+        top: 98px;
+        position: absolute;
+        z-index: 1;
+        display: none;
+        justify-content: center;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    &__add-text {
+        font-size: 13px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 17px;
+        font-size: 13px;
+        text-transform: uppercase;
+        color: $colorText;
+    }
+
+    &__price {
+        font-size: $fontSizeRegular;
+        line-height: 1.2;
+        font-weight: 700;
+
+        text-transform: uppercase;
+        color: $colorSelectSite;
+    }
+
+    &__all {
+
+        margin-top: 79px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__button {
+        width: 212px;
+        height: 48px;
+        background-color: $colorSelectSite;
+        align-content: center;
+        text-align: center;
+
+        &_text {
+            font-size: $fontSizeRegular;
+            line-height: 44px;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            color: $colorBackText;
+        }
+
+    }
+}
+
+@supports(display: grid) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(4, 261px);
+        grid-gap: 32px;
+        justify-content: center;
+
+        &__link {
+            height: 364px;
+        }
+
+        &__items {
+            height: 364px;
+            position: relative;
+
+            &:hover {
+                box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);
+            }
+
+            &:hover .item_pic {
+                filter: brightness(30%);
+            }
+
+            &:hover .products__add {
+                display: flex;
+            }
+        }
+
+        &__box {
+
+            padding-top: 19px;
+            padding-bottom: 23px;
+            padding-left: 15px;
+
+        }
+
+        &__add {
+            top: 98px;
+            position: absolute;
+            z-index: 1;
+            display: none;
+            justify-content: center;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        &__add-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        &__title {
+            font-weight: 700;
+            margin-bottom: 17px;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: $colorText;
+        }
+
+        &__price {
+            font-size: $fontSizeRegular;
+            line-height: 1.2;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            color: $colorSelectSite;
+        }
+
+        &__all {
+
+            margin-top: 79px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__button {
+            width: 212px;
+            height: 48px;
+            background-color: $colorSelectSite;
+            align-content: center;
+            text-align: center;
+
+            &_text {
+                font-size: $fontSizeRegular;
+                line-height: 44px;
+                font-weight: 700;
+                letter-spacing: 0.025em;
+                color: $colorBackText;
+            }
+
+        }
+    }
+}
+
+.add {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border: 1px solid #ffffff;
+    pointer-events: all;
+}
+
+.add:hover {
+    box-shadow: 0 0 10px 0 #ffffff;
+}
+
+.add_pic {
+    margin-right: 10px;
+}
